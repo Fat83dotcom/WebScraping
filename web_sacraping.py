@@ -13,5 +13,6 @@ for links in html.select('.home__list__item'):
     resp = requests.get(linkMateria)
     html1 = BeautifulSoup(resp.text, 'html.parser')
     for texto in html1.select('.post__content'):
-        texto = texto.get_text()
-        print(texto)
+        texto = texto.p.get_text()
+        print(texto, '\n')
+
