@@ -16,7 +16,11 @@ div{
     padding: 30px;
     color: white;
     font-size: 20px;
+    margin: 20px;
 }
 div p{
     text-align: justify;
+}
+.titulo{
+    background-color: tomato;
 }
