@@ -17,3 +17,6 @@ div{
     color: white;
     font-size: 20px;
 }
+div p{
+    text-align: justify;
+}

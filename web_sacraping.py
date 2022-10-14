@@ -33,13 +33,13 @@ with open(f'noticiasCNN{datetime.now().strftime("%d-%m-%Y-%H-%M-%S")}.html', 'a+
     for links in url:
         resposta = requests.get(links)
         html = BeautifulSoup(resposta.text, 'html.parser')
-        arquivo.write(f'<h1>Seção do Site:</h1> <a href="{links}">{links}</a> ')
+        arquivo.write(f'<h1>Seção do Site:</h1> <a href="{links}" target="_blanck">{links}</a> ')
         contador = count(1)
         for noticias in html.select('.home__list__item'):
             tituloMateria = noticias.a.get_text()
             linkMateria = noticias.a.get('href')
             arquivo.write(f'<h2>{next(contador)} Horario do Scraping: {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}</h2> '
-            f'<h3>{tituloMateria}</h3> <a href="{linkMateria}">Link Materia</a> ')
+            f'<h3>{tituloMateria}</h3> <a href="{linkMateria}" target="_blanck">Link Materia</a> ')
             print(tituloMateria)
             print(linkMateria)
             resp = requests.get(linkMateria)
